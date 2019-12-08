@@ -1,0 +1,13 @@
+#header {
+  background-color: $primary-color;
+  border-bottom: 8px solid $primary-color-light;
+
+  #logo {
+    display: block;
+    width: 40%;
+    max-width: 180px;
+    margin: auto;
+    padding: 1.2em 0;
+    fill: white;
+  }
+}

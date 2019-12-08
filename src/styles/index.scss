@@ -1,0 +1,19 @@
+//Helpers
+@import "helpers/parameters";
+@import "helpers/extendables";
+@import "helpers/functions";
+@import "helpers/mixins";
+
+//Components
+@import "shared";
+@import "components/contactList";
+@import "components/shared/header";
+@import "components/shared/mainNavigation";
+
+//Layouts
+@import "layouts/mobile";
+@import "layouts/tablet";
+@import "layouts/desktop";
+
+//Reset
+@import "resets"

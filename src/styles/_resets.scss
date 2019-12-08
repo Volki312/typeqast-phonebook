@@ -1,0 +1,34 @@
+// custom resets
+body {
+  font-family: Roboto;
+  margin: 0;
+  font-size: 12px;
+  background-color: #fcfcfc
+}
+
+main, nav {
+  width: 96%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-color;
+}
+
+p {
+  color: $secondary-color;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+}
+
+
+svg {
+  color: $secondary-color;
+}

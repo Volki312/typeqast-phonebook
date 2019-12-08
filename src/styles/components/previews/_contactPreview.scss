@@ -1,0 +1,32 @@
+.contact {
+	display: flex;
+	align-items: center;
+  max-height: 68px;
+  margin: 1% 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  border: solid;
+  border-width: 1px;
+  border-color: $secondary-color-light;
+
+  .contact--image {
+    width: 15%;
+    max-width: 64px;
+    border-radius: 50%;
+    border: solid;
+    border-width: 2px;
+    border-color: $secondary-color-light;
+  }
+  
+  .contact--name {
+    margin-left: 5%;
+    width: 40%;
+  }
+  
+  .contact--actions {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-left: 5%;
+  }
+}
