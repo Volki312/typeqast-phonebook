@@ -1,15 +1,26 @@
 import React from 'react'
-import MainNavigation from '../shared/MainNavigation'
+import HomeNavigation from '../shared/HomeNavigation'
 import ContactList from '../ContactList'
 import Footer from '../shared/Footer'
 
 const HomePage = (props) => {
+  const contacts = props.contacts
+  const favoriteContacts = props.contacts.filter(con => con.isFavorite)
+  const isPathAll = props.match.url === "/contacts/all"
+  
+  const toggleFavorite = (id) => {
+    props.toggleFavorite(id);
+  }
+
+  const deleteContact = (id) => {
+    props.deleteContact(id);
+  }
 
   return (
     <div>
-      <MainNavigation updateFilter={props.updateFilter} filter={props.filter}/>
-      <ContactList match={props.match} contacts={props.contacts} filter={props.filter}/>
-      <Footer numberOfContacts={props.contacts.length} isFiltered={props.filter}/>
+      <HomeNavigation updateFilter={props.updateFilter} filter={props.filter}/>
+      {<ContactList contacts={isPathAll ? contacts : favoriteContacts} filter={props.filter} deleteContact={deleteContact} toggleFavorite={toggleFavorite} isPathAll={isPathAll}/>}
+      {<Footer numberOfContacts={isPathAll ? contacts.length : favoriteContacts.length} isFiltered={props.filter}/>}
     </div>
   )
 }

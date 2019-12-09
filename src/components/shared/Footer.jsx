@@ -1,13 +1,10 @@
 import React from 'react'
 
 const Footer = (props) => {
-  const filter = props.isFiltered
-  const numberOfContacts = props.numberOfContacts
-
   return (
-    !filter &&
+    !props.isFiltered &&
     <footer>
-      <p className="contacts--info">{numberOfContacts} contacts total in total</p>
+      <p className="contacts--info">{props.numberOfContacts} contacts total in total</p>
     </footer>
   )
 }

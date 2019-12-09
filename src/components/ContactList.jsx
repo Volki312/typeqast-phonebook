@@ -6,26 +6,20 @@ const ContactList = (props) => {
   const contacts = props.contacts
   const filter = props.filter
   
+  const toggleFavorite = (id) => {
+    props.toggleFavorite(id);
+  }
+
+  const deleteContact = (id) => {
+    props.deleteContact(id);
+  }
+
   const filterContactsByName = (contacts, filter) => {
     return contacts.filter(con => con.name.toLowerCase().includes(filter.toLowerCase()))
   }
 
-  const filterFavoriteContacts = (contacts, filter) => {
-    return contacts.filter(con => !con.isFavorite)
-  }
-
   const sortContactsByName = (contacts) => {
     return contacts.sort((curr, next) => (curr.name > next.name) ? 1 : -1)
-  }
-
-  const renderContact = (contact) => {
-    return (<ContactPreview
-      key={contact.id}
-      profile={contact.profile}
-      name={contact.name}
-      isFavorite={contact.isFavorite}
-      id={contact.id}
-    />)
   }
 
   const filteredContacts = filterContactsByName(contacts, filter)
@@ -33,20 +27,20 @@ const ContactList = (props) => {
   
   return (
     <main id="contacts">
-      {
-        filter && 
-        (props.match.url === "/contacts/all"
-        ?
-        <p className="contacts--info">{filteredContacts.length} contacts found...</p>
-        :
-        <p className="contacts--info">{filterFavoriteContacts(filteredContacts).length} favorite contacts found...</p>)
-      }
-      {props.match.url === "/contacts/all" && <AddContactPreview />}
-
-      {
-        // Spaghetti code demonstration
-        sortContactsByName(props.match.url === "/contacts/all" ? filteredContacts : filterFavoriteContacts(filteredContacts)).map((con) => renderContact(con))
-      }
+    {filter && <p className="contacts--info">{filteredContacts.length} contacts found...</p>}
+    {props.isPathAll && <AddContactPreview />}
+    {
+    sortContactsByName(filter ? filteredContacts : contacts).map(con => 
+      <ContactPreview
+        key={con.id}
+        id={con.id}
+        name={con.name}
+        profile={con.profile}
+        isFavorite={con.isFavorite}
+        toggleFavorite={toggleFavorite}
+        deleteContact={deleteContact}
+      />)
+    }
     </main>
   )
 }

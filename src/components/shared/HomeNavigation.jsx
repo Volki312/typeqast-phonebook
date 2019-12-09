@@ -2,7 +2,7 @@ import React from 'react'
 import FilterContactsInput from './FilterContactsInput'
 import { NavLink } from 'react-router-dom'
 
-const MainNavigation = (props) => {
+const HomeNavigation = (props) => {
   const filter = props.filter
 
   const updateFilter = (updatedFilter) => {
@@ -12,12 +12,12 @@ const MainNavigation = (props) => {
   return (
       <nav id="nav">
         <div className="nav--links">
-          <NavLink exact to={"/contacts/all"} className="nav--link">All contacts</NavLink>
-          <NavLink exact to={"/contacts/favorites"} className="nav--link nav--link-last">My favorites</NavLink>
+          <NavLink exact to={"/contacts/all"} className="nav--link" activeClassName="nav--link-active">All contacts</NavLink>
+          <NavLink exact to={"/contacts/favorites"} className="nav--link nav--link-last" activeClassName="nav--link-active">My favorites</NavLink>
         </div>
         <FilterContactsInput updateFilter={updateFilter} value={filter} />
       </nav>
   )
 }
 
-export default MainNavigation
+export default HomeNavigation

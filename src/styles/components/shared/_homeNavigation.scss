@@ -1,3 +1,5 @@
+@import "filterContactsInput";
+
 nav {
   display: flex;
   align-items: center;
@@ -13,7 +15,7 @@ nav {
     width: 90%;
     margin-bottom: 3vh;
     padding: 2vh 0;
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 2px solid $primary-color-light;
 
     .nav--link {
       border-right: 1px solid $secondary-color-light;
@@ -22,17 +24,12 @@ nav {
       font-size: 1.2em;
     }
 
+    .nav--link-active {
+      color: $primary-color-dark;
+    }
+
     .nav--link-last {
       border-right: none;
     }
-  } 
-  
-  .nav--input {
-    width: 80%;
-    margin-bottom: 3vh;
-    border: 1px solid $secondary-color-light;
-    border-radius: 3px;
-    padding: 1em 5%;
-    box-shadow: 0px 0px 20px $secondary-color-light;
   }
 }
