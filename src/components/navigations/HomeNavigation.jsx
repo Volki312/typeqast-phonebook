@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterContactsInput from './FilterContactsInput'
+import FilterContactsInput from '../inputs/FilterContactsInput'
 import { NavLink } from 'react-router-dom'
 
 const HomeNavigation = (props) => {
@@ -10,7 +10,7 @@ const HomeNavigation = (props) => {
   }
 
   return (
-      <nav id="nav">
+      <nav id="nav-home">
         <div className="nav--links">
           <NavLink exact to={"/contacts/all"} className="nav--link" activeClassName="nav--link-active">All contacts</NavLink>
           <NavLink exact to={"/contacts/favorites"} className="nav--link nav--link-last" activeClassName="nav--link-active">My favorites</NavLink>

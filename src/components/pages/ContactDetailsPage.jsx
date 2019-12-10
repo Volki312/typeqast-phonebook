@@ -1,5 +1,5 @@
 import React from 'react'
-import CrudNavigation from '../shared/CrudNavigation'
+import CrudNavigation from '../navigations/CrudNavigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
@@ -19,7 +19,7 @@ class ContactDetailsPage extends React.Component {
           }
         ],
         "isFavorite": true,
-        "profile": "#"
+        "image": "#"
       }
     }
   }
@@ -42,7 +42,7 @@ class ContactDetailsPage extends React.Component {
         <div className="contact-details">
 
           <div className="row">
-            <img src={contact.profile} alt="profile"/>
+            <img src={contact.image || "http://placehold.it/64xd64"} alt="profile"/>
             <h2>{contact.name}</h2>
           </div>
 

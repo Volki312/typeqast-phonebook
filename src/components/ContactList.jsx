@@ -35,7 +35,7 @@ const ContactList = (props) => {
         key={con.id}
         id={con.id}
         name={con.name}
-        profile={con.profile}
+        image={con.image}
         isFavorite={con.isFavorite}
         toggleFavorite={toggleFavorite}
         deleteContact={deleteContact}

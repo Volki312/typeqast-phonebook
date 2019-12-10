@@ -36,10 +36,9 @@ class App extends React.Component {
   deleteContact = (contactId) => {
     const contacts = this.state.contacts
     const i = contacts.findIndex(con => con.id === contactId)
-
+    
     const updatedContacts = [...contacts.slice(0, i), ...contacts.slice(i + 1)]
     
-    console.log(updatedContacts)
     this.setState({contacts: updatedContacts})
     localStorage.setItem('contacts', JSON.stringify(updatedContacts))
   }
@@ -86,9 +85,9 @@ class App extends React.Component {
 
           <Route exact path="/contacts/add" component={AddContactPage} />
           {
-          // TODO: On these two routes, check if contact with said id exists, if not -> redirect to page404 no such contact exists 
+          // TODO: On these edit and detail pages, check if contact with said id exists, if not -> redirect to page404 no such contact exists 
           }
-          <Route exact path="/contacts/edit/:id" component={EditContactPage} />
+          <Route exact path="/contacts/edit/:id" render={(props) => <EditContactPage {...props}  deleteContact={this.deleteContact} />} />
           <Route exact path="/contacts/details/:id" render={(props) => <ContactDetailsPage {...props}/>} />
           <Route component={Page404} />
         </Switch>

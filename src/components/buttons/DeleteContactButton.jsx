@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 
 const DeleteContactButton = (props) => {
-  const handleClick = (e) => {
-    props.deleteContact(props.id);
+  const handleClick = (event) => {
+    props.deleteContact(parseInt(props.id));
   }
 
   return (

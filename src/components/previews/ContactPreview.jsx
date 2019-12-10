@@ -15,7 +15,7 @@ const ContactPreview = (props) => {
 
   return (
     <div className="contact">
-        <img className="contact--image" src={props.profile} alt="Contact_Image" />
+        <img className="contact--image" src={props.image || "http://placehold.it/64xd64"} alt="Contact_Image" />
         <Link className="contact--name" to={`/contacts/details/${props.id}`}>{props.name}</Link>
         <div className="contact--actions">
           <FavoritiseContactButton id={props.id} isFavorite={props.isFavorite} toggleFavorite={toggleFavorite} className="contact--button" />

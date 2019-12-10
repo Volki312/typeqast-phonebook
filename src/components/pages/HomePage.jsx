@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeNavigation from '../shared/HomeNavigation'
+import HomeNavigation from '../navigations/HomeNavigation'
 import ContactList from '../ContactList'
 import Footer from '../shared/Footer'
 
