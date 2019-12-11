@@ -3,11 +3,13 @@ import CrudNavigation from '../navigations/CrudNavigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import contactsStore from '../../fakeApi/store';
 
 class ContactDetailsPage extends React.Component {
   constructor() {
     super()
     this.state = {
+      isLoading: true,
       contact: {
         "id": 0,
         "name": "name",
@@ -25,11 +27,16 @@ class ContactDetailsPage extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.match.params.id
-    const contacts = JSON.parse(localStorage.getItem('contacts'))
-    const contact = contacts.find(con => con.id.toString() === id)
-
-    this.setState({ contact: contact })
+    const id = parseInt(this.props.match.params.id)
+    contactsStore.get(id).then(data => 
+      data ?
+      this.setState({
+        isLoading: false,
+        contact: data
+      })
+      :
+      this.props.history.push("/contacts/ContactNotFound")
+    )
   }
 
   render () {
@@ -39,7 +46,7 @@ class ContactDetailsPage extends React.Component {
       <div>
 
         <CrudNavigation match={this.props.match} isFavorite={contact.isFavorite} id={contact.id}/>
-        <div className="contact-details">
+        <main className="contact-details">
 
           <div className="row">
             <img src={contact.image || "http://placehold.it/64xd64"} alt="profile"/>
@@ -75,7 +82,7 @@ class ContactDetailsPage extends React.Component {
             </div>
           </div>
 
-        </div>
+        </main>
       </div>
     )
   }

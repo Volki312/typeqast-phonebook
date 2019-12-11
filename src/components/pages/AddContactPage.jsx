@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import CrudNavigation from '../navigations/CrudNavigation'
-import NumberInputs from '../inputs/NumberInputs'
-import ImageUrlPopupInput from '../inputs/ImageUrlPopupInput'
+import ContactForm from '../forms/ContactForm'
 
 class AddContactPage extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       showPopup: false,
-      image: "",
-      name: "",
-      email: "",
-      numbers: [{number: "", label: ""}]
+      form: {
+        name: "",
+        email: "",
+        numbers: [{number: "", label: ""}],
+        image: ""
+      }
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
     this.togglePopup = this.togglePopup.bind(this)
     this.addNumber = this.addNumber.bind(this)
     this.removeNumber = this.removeNumber.bind(this)
@@ -29,18 +30,20 @@ class AddContactPage extends Component {
     const i = target.dataset.id
 
     if (["number", "label"].includes(className)) {
-      const numbers = [...this.state.numbers]   
+      const numbers = [...this.state.form.numbers]   
       numbers[i][className] = value
-      this.setState({ numbers })
+      this.setState( {form: { ...this.state.form, numbers: numbers }})
     } 
-    else this.setState({ [name]: value })
-
-    console.log(this.state)
+    else this.setState( {form:{ ...this.state.form, [name]: value }})
   }
 
-  handleSubmit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault()
-    console.log("form submited")
+
+    event.target.form.checkValidity()
+    event.target.form.reportValidity()
+
+    this.props.addContact({...this.state.form })
     this.props.history.push("/contacts/all")
   }
 
@@ -67,51 +70,19 @@ class AddContactPage extends Component {
   }
 
   render() {
-    const {showPopup, image, name, email, numbers} = this.state
+    const { match } = this.props
     return (
       <div>
-        <CrudNavigation match={this.props.match}/>
+        <CrudNavigation match={match} deleteContact={this.deleteContact} id={match.params.id} />
         <main>
-          <form>
-
-            <div className="form--row">
-              <ImageUrlPopupInput showPopup={showPopup} value={image} handleInputChange={this.handleInputChange} togglePopup={this.togglePopup} />
-            </div>
-
-            <div className="form--row">
-              <label>full name
-                <input
-                  name="name"
-                  placeholder="Full name"
-                  type="text"
-                  value={name}
-                  onChange={this.handleInputChange}
-                />
-              </label>
-            </div>
-
-            <div className="form--row">
-              <label>email
-                <input
-                  name="email"
-                  placeholder="Email"
-                  type="email"
-                  value={email}
-                  onChange={this.handleInputChange}
-                />
-              </label>
-            </div>
-
-            <div className="form--row">
-              <NumberInputs numbers={numbers} removeNumber={this.removeNumber} addNumber={this.addNumber} handleInputChange={this.handleInputChange} />
-            </div>
-
-            <div className="form--row-footer">
-              <button><Link to="/contacts/all">Cancel</Link></button>
-              <button onClick={this.handleSubmit}>Save</button>
-            </div>
-            
-          </form>
+          <ContactForm
+            form={this.state.form}
+            handleInputChange={this.handleInputChange}
+            onSubmit={this.onSubmit}
+            togglePopup={this.togglePopup}
+            addNumber={this.addNumber}
+            removeNumber={this.removeNumber}
+          />
         </main>
       </div>
     )

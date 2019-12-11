@@ -7,11 +7,11 @@ const ContactList = (props) => {
   const filter = props.filter
   
   const toggleFavorite = (id) => {
-    props.toggleFavorite(id);
+    props.toggleFavorite(id)
   }
 
   const deleteContact = (id) => {
-    props.deleteContact(id);
+    props.deleteContact(id)
   }
 
   const filterContactsByName = (contacts, filter) => {
@@ -19,7 +19,8 @@ const ContactList = (props) => {
   }
 
   const sortContactsByName = (contacts) => {
-    return contacts.sort((curr, next) => (curr.name > next.name) ? 1 : -1)
+    const sortedContacts = contacts.sort((curr, next) => (curr.name.toLowerCase() > next.name.toLowerCase()) ? 1 : -1)
+    return sortedContacts
   }
 
   const filteredContacts = filterContactsByName(contacts, filter)

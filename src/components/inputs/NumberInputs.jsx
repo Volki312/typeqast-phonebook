@@ -23,7 +23,7 @@ const NumberInputs = (props) => {
           return (
             <div key={i}>
               <input
-                type="text"
+                type="tel"
                 placeholder="Number"
                 name={numberId}
                 data-id={i}
@@ -31,6 +31,8 @@ const NumberInputs = (props) => {
                 value={number.number} 
                 className="number"
                 onChange={handleInputChange}
+                maxLength="20"
+                required
               />
               <input
                 type="text"
@@ -41,6 +43,8 @@ const NumberInputs = (props) => {
                 value={number.label} 
                 className="label"
                 onChange={handleInputChange}
+                maxLength="20"
+                required
               />
               <button onClick={removeNumber}>X</button>
             </div>

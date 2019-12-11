@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
-import mockContacts from './db'
 import Header from './shared/Header'
 import HomePage from './pages/HomePage'
 import AddContactPage from './pages/AddContactPage'
 import EditContactPage from './pages/EditContactPage'
 import ContactDetailsPage from './pages/ContactDetailsPage'
 import Page404 from './pages/Page404'
+import contactsStore from '../fakeApi/store';
 
 class App extends React.Component {
   constructor() {
@@ -16,6 +16,11 @@ class App extends React.Component {
       contacts: [],
       filter: ""
     }
+    this.deleteContact = this.deleteContact.bind(this)
+    this.addContact = this.addContact.bind(this)
+    this.editContact = this.editContact.bind(this)
+    this.toggleFavorite = this.toggleFavorite.bind(this)
+    this.updateFilter = this.updateFilter.bind(this)
   }
   
   updateFilter = (updatedFilter) => {
@@ -30,28 +35,37 @@ class App extends React.Component {
     const updatedContacts = Object.assign([], contacts, {[i]: updatedContact})
     
     this.setState({contacts: updatedContacts})
-    localStorage.setItem('contacts', JSON.stringify(updatedContacts))
+    contactsStore.update(updatedContact)
+  }
+
+  addContact = (contact) => {
+    contactsStore.create(contact).then(
+      data => this.setState({ contacts: data})
+    )
+  }  
+  
+  editContact = (contact) => {
+    contactsStore.update(contact).then(
+      data => this.setState({ contacts: data})
+    )
   }
 
   deleteContact = (contactId) => {
-    const contacts = this.state.contacts
-    const i = contacts.findIndex(con => con.id === contactId)
-    
-    const updatedContacts = [...contacts.slice(0, i), ...contacts.slice(i + 1)]
-    
-    this.setState({contacts: updatedContacts})
-    localStorage.setItem('contacts', JSON.stringify(updatedContacts))
+    contactsStore.remove(contactId).then(
+      data => this.setState({ contacts: data })
+    )
   }
 
   componentDidMount() {
-    localStorage.setItem('contacts', JSON.stringify(mockContacts))
-    this.setState({
-      isLoading: false,
-      contacts: JSON.parse(localStorage.getItem('contacts'))
-    })
+    contactsStore.fetchData().then(data => 
+      this.setState({
+        isLoading: false,
+        contacts: data
+      })
+    )
   }
 
-  //Reset filter input after changing route from /contacts/all
+  //Reset filter input after changing route from /contacts/(all|favorites)
   componentDidUpdate(prevProps) {
     const currPath = this.props.location.pathname
     const prevPath = prevProps.location.pathname
@@ -61,6 +75,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         { /* Shared across the pages*/}
@@ -83,11 +98,8 @@ class App extends React.Component {
               />
           }/>
 
-          <Route exact path="/contacts/add" component={AddContactPage} />
-          {
-          // TODO: On these edit and detail pages, check if contact with said id exists, if not -> redirect to page404 no such contact exists 
-          }
-          <Route exact path="/contacts/edit/:id" render={(props) => <EditContactPage {...props}  deleteContact={this.deleteContact} />} />
+          <Route exact path="/contacts/add" render={(props) => <AddContactPage {...props} addContact={this.addContact} />} />
+          <Route exact path="/contacts/edit/:id" render={(props) => <EditContactPage {...props} deleteContact={this.deleteContact} editContact={this.editContact} />} />
           <Route exact path="/contacts/details/:id" render={(props) => <ContactDetailsPage {...props}/>} />
           <Route component={Page404} />
         </Switch>
@@ -96,4 +108,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default withRouter(App)

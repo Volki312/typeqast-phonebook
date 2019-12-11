@@ -29,8 +29,8 @@ const Service = () => {
   const fakeHttp = contacts => {
     return new Promise(resolve => {
       setTimeout(() => {
-        _localStorage.save(contacts);
-        resolve(contacts);
+        _localStorage.save(contacts)
+        resolve(contacts)
       }, 100)
     })
   }
@@ -40,8 +40,8 @@ const Service = () => {
     // Get data from local storage and save in array.
     _contacts = _localStorage.get()
 
-    // Save mocks if no data in local storage
-    if (!_contacts) _contacts = mockContacts
+    // Save mocks if no data in local storage or if all contacts are deleted
+    if (!_contacts || !_contacts.length) _contacts = mockContacts
     return fakeHttp(_contacts)
   }
 
@@ -50,6 +50,7 @@ const Service = () => {
    * @param {number} id
    */
   const getOne = id => {
+    _contacts = _localStorage.get()
     const contact = _contacts.find(c => c.id === id)
     return new Promise(resolve => {
       setTimeout(() => resolve(contact), 100)
@@ -78,8 +79,8 @@ const Service = () => {
    * Deletes provided Contact from array and returns that array as Promise.
    * @param {Object} removedContact
    */
-  const remove = removedContact => {
-    _contacts = _contacts.filter(c => c.id !== removedContact.id)
+  const remove = id => {
+    _contacts = _contacts.filter(c => c.id !== id)
     return fakeHttp([..._contacts])
   }
 

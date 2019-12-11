@@ -9,11 +9,11 @@ const HomePage = (props) => {
   const isPathAll = props.match.url === "/contacts/all"
   
   const toggleFavorite = (id) => {
-    props.toggleFavorite(id);
+    props.toggleFavorite(id)
   }
 
   const deleteContact = (id) => {
-    props.deleteContact(id);
+    props.deleteContact(id)
   }
 
   return (

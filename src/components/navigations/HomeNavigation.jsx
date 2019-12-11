@@ -6,7 +6,7 @@ const HomeNavigation = (props) => {
   const filter = props.filter
 
   const updateFilter = (updatedFilter) => {
-    props.updateFilter(updatedFilter);
+    props.updateFilter(updatedFilter)
   }
 
   return (

@@ -5,7 +5,7 @@ import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 
 const FavoritiseContactButton = (props) => {
   const handleClick = (event) => {
-    props.toggleFavorite && props.toggleFavorite(props.id);
+    props.toggleFavorite && props.toggleFavorite(props.id)
   }
 
   return (

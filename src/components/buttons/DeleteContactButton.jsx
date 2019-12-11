@@ -4,7 +4,7 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 
 const DeleteContactButton = (props) => {
   const handleClick = (event) => {
-    props.deleteContact(parseInt(props.id));
+    props.deleteContact(parseInt(props.id))
   }
 
   return (

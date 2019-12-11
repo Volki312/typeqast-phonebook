@@ -4,7 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const FilterContactsInput = (props) => {
   const handleInputChange = (event) => {
-    props.updateFilter(event.target.value);
+    props.updateFilter(event.target.value)
   }
 
   return (

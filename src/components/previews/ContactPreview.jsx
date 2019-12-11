@@ -6,11 +6,11 @@ import EditContactButton from '../buttons/EditContactButton'
 
 const ContactPreview = (props) => {
   const toggleFavorite = (id) => {
-    props.toggleFavorite(id);
+    props.toggleFavorite(id)
   }
 
   const deleteContact = (id) => {
-    props.deleteContact(id);
+    props.deleteContact(id)
   }
 
   return (

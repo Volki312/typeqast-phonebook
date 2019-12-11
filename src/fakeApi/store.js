@@ -1,3 +1,5 @@
+import contactsDataService from './service';
+
 /**
  * Some nasty stuff going on here
  * @param {*} dataService
@@ -14,6 +16,7 @@
  */
 const ContactsStore = (dataService) => {
   let _contacts = []
+  dataService.getAll().then(data => _contacts=data)
 
   /**
    * Creates unique contact ID based on provided array
@@ -21,11 +24,10 @@ const ContactsStore = (dataService) => {
    */
   const getUniqueId = array => {
     let len = array.length
-    if (!!array && len > 0) {
-      const lastId = array.sort((curr, next) => curr.id - next.id)[len - 1].id
-      return lastId + 1
-    }
-    return 1
+    if (!array || !len) return 1
+    
+    const lastId = array.sort((curr, next) => curr.id - next.id)[len - 1].id
+    return lastId + 1
   }
 
   /* Fetches all available data from local storage */
@@ -43,9 +45,9 @@ const ContactsStore = (dataService) => {
    * @param {object} data
    */
   const create = data => {
-    const newContact = { ...data, id: getUniqueId(_contacts) }
-    return dataService
-      .create(newContact)
+    dataService.getAll().then(data => _contacts = data)
+    const newContact = { id: getUniqueId(_contacts), ...data }
+    return dataService.create(newContact)
   }
 
   /**
@@ -54,17 +56,15 @@ const ContactsStore = (dataService) => {
    * @param {object} updatedContact
    */
   const update = updatedContact =>
-    dataService
-      .update(updatedContact)
+    dataService.update(updatedContact)
 
   /**
    * Removes targeted Contact object.
    * Also removes it from local storage.
    * @param {object} updatedContact
    */
-  const remove = removedContact =>
-    dataService
-      .remove(removedContact)
+  const remove = id =>
+    dataService.remove(id)
 
   return Object.freeze({
     fetchData,
@@ -75,4 +75,6 @@ const ContactsStore = (dataService) => {
   })
 }
 
-export default ContactsStore
+let contactsStore = ContactsStore(contactsDataService())
+
+export default contactsStore

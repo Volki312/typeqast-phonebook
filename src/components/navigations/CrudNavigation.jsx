@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import FavoritiseContactButton from '../buttons/FavoritiseContactButton'
 import EditContactButton from '../buttons/EditContactButton'
 import DeleteContactButton from '../buttons/DeleteContactButton'

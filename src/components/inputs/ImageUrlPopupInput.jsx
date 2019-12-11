@@ -11,7 +11,7 @@ const ImageUrlPopupInput = (props) => {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>Image url</button>
+      <button onClick={handleButtonClick} style={{background: "url(" + (props.value || "http://placehold.it/64xd64") + ")"}}>Image url</button>
       {
         props.showPopup &&
         <div className="form--popup">
