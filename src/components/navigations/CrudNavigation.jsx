@@ -13,12 +13,12 @@ const CrudNavigation = (props) => {
 
   return (
     <nav id="nav-crud">
-      <GoBackButton className="contact--button"/>
+      <GoBackButton className="nav--button"/>
       <div>
-        {path === "/contacts/details/:id" && <FavoritiseContactButton isFavorite={props.isFavorite} className="contact--button"/>}
-        {path === "/contacts/details/:id" && <EditContactButton id={props.id} className="contact--button"/>}
+        {path === "/contacts/details/:id" && <FavoritiseContactButton isFavorite={props.isFavorite} className="nav--button"/>}
+        {path === "/contacts/details/:id" && <EditContactButton id={props.id} className="nav--button"/>}
       </div>
-      {path === "/contacts/edit/:id" && <DeleteContactButton id={props.id} deleteContact={deleteContact} className="contact--button"/>}
+      {path === "/contacts/edit/:id" && <DeleteContactButton id={props.id} deleteContact={deleteContact} className="nav--button"/>}
     </nav>
   )
 }

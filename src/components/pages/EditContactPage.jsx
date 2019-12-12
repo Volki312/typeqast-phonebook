@@ -31,6 +31,8 @@ class EditContactPage extends Component {
     const name = target.name
     const className = target.className
     const i = target.dataset.id
+    
+    console.log(this.state)
 
     if (["number", "label"].includes(className)) {
       const numbers = [...this.state.form.numbers]   
@@ -46,7 +48,7 @@ class EditContactPage extends Component {
     event.target.form.checkValidity()
     event.target.form.reportValidity()
 
-    this.props.editContact({ ...this.state.form })
+    this.props.editContact(this.state.form)
     this.props.history.push("/contacts/all")
   }
 
@@ -64,17 +66,17 @@ class EditContactPage extends Component {
 
   addNumber = (event) => {
     event.preventDefault()
-    this.setState(prevState => ({numbers: [...prevState.numbers, {number:"", label:""}]}))
+    const form = this.state.form
+
+    this.setState({form: { numbers: [...form.numbers, {number:"", label:""}]}})
   }
 
   removeNumber = (event) => {
     event.preventDefault()
-    const numbers = this.state.numbers
+    const form = this.state.form
     const i = parseInt(event.target.previousElementSibling.dataset.id)
 
-    const updatedNumbers = [...numbers.slice(0, i), ...numbers.slice(i + 1)]
-
-    this.setState({numbers: updatedNumbers})
+    this.setState({form: { numbers: [...form.numbers.slice(0, i), ...form.numbers.slice(i + 1)]}})
   }
 
   componentDidMount() {
@@ -94,7 +96,7 @@ class EditContactPage extends Component {
         <CrudNavigation match={match} deleteContact={this.deleteContact} id={match.params.id} />
         <main>
           <ContactForm
-            form={this.state.form}
+            state={this.state}
             handleInputChange={this.handleInputChange}
             onSubmit={this.onSubmit}
             togglePopup={this.togglePopup}

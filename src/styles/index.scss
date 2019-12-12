@@ -8,8 +8,9 @@
 @import "shared";
 @import "components/contactList";
 @import "components/shared/header";
-@import "components/shared/homeNavigation";
-@import "components/shared/crudNavigation";
+@import "components/forms/contactForm";
+@import "components/navigations/homeNavigation";
+@import "components/navigations/crudNavigation";
 @import "components/pages/addContactPage";
 
 //Layouts

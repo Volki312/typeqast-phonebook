@@ -49,7 +49,7 @@ class ContactDetailsPage extends React.Component {
         <main className="contact-details">
 
           <div className="row">
-            <img src={contact.image || "http://placehold.it/64xd64"} alt="profile"/>
+            <img src={contact.image || "http://placehold.it/128x128"} alt="profile"/>
             <h2>{contact.name}</h2>
           </div>
 

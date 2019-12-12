@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpload } from '@fortawesome/free-solid-svg-icons'
 
 const ImageUrlPopupInput = (props) => {
   const handleInputChange = (event) => {
@@ -10,20 +12,22 @@ const ImageUrlPopupInput = (props) => {
   }
 
   return (
-    <div>
-      <button onClick={handleButtonClick} style={{background: "url(" + (props.value || "http://placehold.it/64xd64") + ")"}}>Image url</button>
+    <div style={{display: "flex"}}>
+      <button onClick={handleButtonClick} style={{background: `url(${props.value || "http://placehold.it/128x128"})`}} className="form--image">
+        <FontAwesomeIcon icon={faUpload} />
+      </button>
       {
         props.showPopup &&
         <div className="form--popup">
           <div className="popup--inner">
-            <label>
-              image url
+            <label className="form--label">image url<br/>
               <input
                 name="image"
                 placeholder="Image url"
                 type="url"
                 value={props.value}
                 onChange={handleInputChange}
+                className="form--input"
               />
             </label>
             <button onClick={handleButtonClick}>finish</button>

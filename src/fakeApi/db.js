@@ -14,7 +14,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 3,
@@ -48,7 +48,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 4,
@@ -65,7 +65,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 5,
@@ -82,7 +82,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 6,
@@ -99,7 +99,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 7,
@@ -116,7 +116,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 8,
@@ -133,7 +133,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 9,
@@ -150,7 +150,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 10,
@@ -167,7 +167,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 11,
@@ -184,7 +184,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 12,
@@ -201,7 +201,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 13,
@@ -218,7 +218,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 14,
@@ -235,7 +235,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 15,
@@ -252,7 +252,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 16,
@@ -269,7 +269,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 17,
@@ -286,7 +286,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 18,
@@ -303,7 +303,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 19,
@@ -320,7 +320,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 20,
@@ -337,7 +337,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 21,
@@ -354,7 +354,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 22,
@@ -371,7 +371,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 23,
@@ -388,7 +388,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 24,
@@ -405,7 +405,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 25,
@@ -422,7 +422,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 26,
@@ -439,7 +439,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 27,
@@ -456,7 +456,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 28,
@@ -473,7 +473,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 29,
@@ -490,7 +490,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 30,
@@ -507,7 +507,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 31,
@@ -524,7 +524,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 32,
@@ -541,7 +541,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 33,
@@ -558,7 +558,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 34,
@@ -575,7 +575,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 35,
@@ -592,7 +592,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 36,
@@ -609,7 +609,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 37,
@@ -626,7 +626,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 38,
@@ -643,7 +643,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 39,
@@ -660,7 +660,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 40,
@@ -677,7 +677,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 41,
@@ -694,7 +694,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 42,
@@ -711,7 +711,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 43,
@@ -728,7 +728,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 44,
@@ -745,7 +745,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 45,
@@ -762,7 +762,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 46,
@@ -779,7 +779,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 47,
@@ -796,7 +796,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 48,
@@ -813,7 +813,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 49,
@@ -830,7 +830,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 50,
@@ -847,7 +847,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 51,
@@ -864,7 +864,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 52,
@@ -881,7 +881,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 53,
@@ -898,7 +898,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 54,
@@ -915,7 +915,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 55,
@@ -932,7 +932,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 56,
@@ -949,7 +949,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 57,
@@ -966,7 +966,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 58,
@@ -983,7 +983,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 59,
@@ -1000,7 +1000,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 60,
@@ -1017,7 +1017,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 61,
@@ -1034,7 +1034,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 62,
@@ -1051,7 +1051,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 63,
@@ -1068,7 +1068,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 64,
@@ -1085,7 +1085,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 65,
@@ -1102,7 +1102,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 66,
@@ -1119,7 +1119,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 67,
@@ -1136,7 +1136,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 68,
@@ -1153,7 +1153,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 69,
@@ -1170,7 +1170,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 70,
@@ -1187,7 +1187,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 71,
@@ -1204,7 +1204,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 72,
@@ -1221,7 +1221,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 73,
@@ -1238,7 +1238,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 74,
@@ -1255,7 +1255,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 75,
@@ -1272,7 +1272,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 76,
@@ -1289,7 +1289,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 77,
@@ -1306,7 +1306,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 78,
@@ -1323,7 +1323,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 79,
@@ -1340,7 +1340,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 80,
@@ -1357,7 +1357,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 81,
@@ -1374,7 +1374,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 82,
@@ -1391,7 +1391,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 83,
@@ -1408,7 +1408,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 84,
@@ -1425,7 +1425,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 85,
@@ -1442,7 +1442,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 86,
@@ -1459,7 +1459,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 87,
@@ -1476,7 +1476,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 88,
@@ -1493,7 +1493,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 89,
@@ -1510,7 +1510,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 90,
@@ -1527,7 +1527,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 91,
@@ -1544,7 +1544,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 92,
@@ -1561,7 +1561,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 93,
@@ -1578,7 +1578,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 94,
@@ -1595,7 +1595,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 95,
@@ -1612,7 +1612,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 96,
@@ -1629,7 +1629,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 97,
@@ -1646,7 +1646,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 98,
@@ -1663,7 +1663,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 99,
@@ -1680,7 +1680,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": false,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   },
   {
     "id": 100,
@@ -1697,7 +1697,7 @@ const mockContacts = [
       }
     ],
     "isFavorite": true,
-    "image": "http://placehold.it/64xd64"
+    "image": "http://placehold.it/128x128"
   }
 ]
 

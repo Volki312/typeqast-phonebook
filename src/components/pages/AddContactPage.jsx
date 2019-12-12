@@ -43,7 +43,7 @@ class AddContactPage extends Component {
     event.target.form.checkValidity()
     event.target.form.reportValidity()
 
-    this.props.addContact({...this.state.form })
+    this.props.addContact(this.state.form)
     this.props.history.push("/contacts/all")
   }
 
@@ -76,7 +76,7 @@ class AddContactPage extends Component {
         <CrudNavigation match={match} deleteContact={this.deleteContact} id={match.params.id} />
         <main>
           <ContactForm
-            form={this.state.form}
+            state={this.state}
             handleInputChange={this.handleInputChange}
             onSubmit={this.onSubmit}
             togglePopup={this.togglePopup}

@@ -1,0 +1,74 @@
+#form {
+  .form--row {
+    margin-top: 20px;
+    border-bottom: 2px solid $primary-color-light;
+  }
+  
+  .form--row-last {
+    border: none;
+  }
+
+  .form--image {
+    @extend %rounded-border;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 20px auto;
+
+    .fa-upload {
+      color: white;
+    }
+  }
+
+  .label--fa {
+    margin-right: 10px;
+  }
+
+  .form--label, .label--fa {
+    color: $primary-color-dark;
+    font-size: 13px;
+  }
+
+  .form--input {
+    border: 1px solid $secondary-color-light;
+    border-radius: 3px;
+    padding: 13px 5%;
+    width: 90%;
+    margin: 14px 0;
+    color: $secondary-color;
+    caret-color: $primary-color-dark;
+  }
+
+  .form--input-shorter {
+    width: 65%;
+    margin-top: 0;
+  }
+
+  .form--button-remove {
+    @include rounded-button(30px, $secondary-color-light);
+    margin: auto 0 auto 10%;
+  }
+
+  .form--button-add {
+    @include rounded-button(30px, $primary-color-light);
+    margin: 15px 15px 15px 0;
+  }
+  
+  .form--footer {
+    display: flex;
+    justify-content: space-between;
+
+    .form--button-cancel {
+      @include oval-button(42vw, $secondary-color-dark);
+  
+      a {
+        color: white;
+      }
+    }
+  
+    .form--button-save {
+      @include oval-button(42vw, $primary-color-dark);
+    }
+  }
+
+}
+
