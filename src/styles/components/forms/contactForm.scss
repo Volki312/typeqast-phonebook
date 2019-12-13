@@ -23,9 +23,10 @@
     margin-right: 10px;
   }
 
-  .form--label, .label--fa {
+  .form--label p, .label--fa {
     color: $primary-color-dark;
     font-size: 13px;
+    display: inline-block;
   }
 
   .form--input {

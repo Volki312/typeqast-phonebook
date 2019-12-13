@@ -5,7 +5,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const AddContactPreview = () => {
   return (
-    <div id="contacts_add">
+    <div id="contacts_add" className="contact">
         <FontAwesomeIcon icon={faPlus} size="lg" />
         <Link to="/contacts/add" >Add new</Link>
     </div>

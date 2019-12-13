@@ -17,7 +17,7 @@ const NumberInputs = (props) => {
   }
 
   return (
-    <label className="form--label"><FontAwesomeIcon icon={faMobileAlt} className="label--fa" />numbers<br/>
+    <label className="form--label"><FontAwesomeIcon icon={faMobileAlt} className="label--fa" /><p>numbers</p><br/>
       {
         props.numbers.map((number, i)=> {
           const numberId = "number-" + i
@@ -54,7 +54,8 @@ const NumberInputs = (props) => {
           )
         })
       }
-    <button onClick={addNumber} className="form--button form--button-add">+</button>Add number
+    <button onClick={addNumber} className="form--button form--button-add">+</button>
+    <p>Add number</p>
     </label>
   )
 }

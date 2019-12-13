@@ -17,7 +17,7 @@ class ContactDetailsPage extends React.Component {
         "numbers": [
           {
             "number": "number",
-            "description": "description"
+            "label": "label"
           }
         ],
         "isFavorite": true,
@@ -46,42 +46,44 @@ class ContactDetailsPage extends React.Component {
       <div>
 
         <CrudNavigation match={this.props.match} isFavorite={contact.isFavorite} id={contact.id}/>
-        <main className="contact-details">
-
-          <div className="row">
-            <img src={contact.image || "http://placehold.it/128x128"} alt="profile"/>
+        <main className="contact--details">
+          <div className="details--row details--row-title">
+            <img src={contact.image || "https://i.ibb.co/80WvdvX/placeholder.png"} alt="profile" className="details--image" />
             <h2>{contact.name}</h2>
           </div>
 
-          <div className="row">
-            <div className="column">
-              <FontAwesomeIcon icon={faEnvelope} />
+          <div className="details--body">
+            <div className="details--row">
+              <div className="details--column">
+                <FontAwesomeIcon icon={faEnvelope} className="details--group-title" />
+              </div>
+              <div className="details--column">
+                <p className="details--group-title">email</p>
+                <p className="details--email">{contact.email}</p>
+              </div>
             </div>
-            <div className="column">
-              <h3>email</h3>
-              <p>{contact.email}</p>
+          
+            <div className="details--row">
+              <div className="details--column">
+                <FontAwesomeIcon icon={faMobileAlt} className="details--group-title" />
+              </div>
+              <div className="details--column">
+                <p className="details--group-title">numbers</p>
+                <div>
+                  {
+                    contact.numbers.map((num, i) => {
+                      return (
+                        <div key={i} className="details--row">
+                          <p className="details--number-label">{num.label.toUpperCase()}</p>
+                          <p><u>{num.number}</u></p>
+                        </div>
+                      )}
+                    )
+                  }
+                </div>
+              </div>
             </div>
           </div>
-        
-          <div className="row">
-            <div className="column">
-              <FontAwesomeIcon icon={faMobileAlt} />
-            </div>
-            <div className="column">
-              <h3>numbers</h3>
-              {
-                contact.numbers.map((num, i) => {
-                  return (
-                    <div className="row" key={i}>
-                      <p>{num.description}</p>
-                      <p>{num.number}</p>
-                    </div>
-                  )}
-                )
-              }
-            </div>
-          </div>
-
         </main>
       </div>
     )

@@ -5,13 +5,14 @@
 @import "helpers/mixins";
 
 //Components
-@import "shared";
 @import "components/contactList";
+@import "components/shared/footer";
 @import "components/shared/header";
-@import "components/forms/contactForm";
 @import "components/navigations/homeNavigation";
 @import "components/navigations/crudNavigation";
+@import "components/forms/contactForm";
 @import "components/pages/addContactPage";
+@import "components/pages/contactDetailsPage";
 
 //Layouts
 @import "layouts/mobile";

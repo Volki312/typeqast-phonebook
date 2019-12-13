@@ -25,7 +25,7 @@ const ContactForm = (props) => {
       </div>
 
       <div className="form--row">
-        <label className="form--label"><FontAwesomeIcon icon={faUser} className="label--fa" />full name<br/>
+        <label className="form--label"><FontAwesomeIcon icon={faUser} className="label--fa" /><p>full name</p><br/>
           <input
             name="name"
             placeholder="Full name"
@@ -41,7 +41,7 @@ const ContactForm = (props) => {
       </div>
 
       <div className="form--row">
-        <label className="form--label"><FontAwesomeIcon icon={faEnvelope} className="label--fa" />email<br/>
+        <label className="form--label"><FontAwesomeIcon icon={faEnvelope} className="label--fa" /><p>email</p><br/>
           <input
             name="email"
             placeholder="Email"

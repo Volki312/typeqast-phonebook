@@ -1,0 +1,54 @@
+.contact--details {
+  width: 0.9 * 96%;
+  margin: 0 auto;
+
+  p {
+    margin: 0;
+  }
+
+  .details--row-title {
+    border-bottom: 2px solid $primary-color-light;
+    padding-bottom: 3vh;
+
+    h2 {
+      color: $secondary-color;
+      margin-left: 5vw;
+      align-self: center;
+    }
+  }
+
+  .details--body {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .details--row {
+    display: flex;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .details--column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+
+  .details--group-title {
+    color: $primary-color-dark;
+  }
+
+  .details--image {
+    @extend %rounded-border;
+    width: 17vw;
+    height: 17vw;
+  }
+
+  .details--email {
+    margin: 10px 0;
+  }
+
+  .details--number-label {
+    width: 78px;
+  }
+}
