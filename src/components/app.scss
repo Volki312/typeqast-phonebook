@@ -1,0 +1,14 @@
+//Helpers
+@import "helpers/parameters";
+@import "helpers/extendables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/resets";
+
+//Components
+@import "shared/header";
+@import "pages/homePage";
+@import "pages/contactDetailsPage";
+@import "pages/addContactPage";
+@import "pages/editContactPage";
+@import "pages/page404";

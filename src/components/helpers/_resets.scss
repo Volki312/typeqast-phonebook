@@ -33,7 +33,12 @@ button {
   width: 20px;
 }
 
-
 svg {
   color: $secondary-color;
+}
+
+@include tablet {
+  p {
+    font-size: 15px;
+  }
 }

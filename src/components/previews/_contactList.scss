@@ -1,0 +1,16 @@
+@import "previews/contactPreview";
+@import "previews/addContactPreview";
+
+#contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+@include desktop {
+  #contacts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+}

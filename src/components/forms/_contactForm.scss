@@ -1,3 +1,6 @@
+@import "inputs/numberInputs";
+@import "inputs/imageUrlPopupInput";
+
 #form {
   .form--row {
     margin-top: 20px;
@@ -73,3 +76,15 @@
 
 }
 
+@include tablet {
+  #form {
+    width: 50%;
+    .form--input {
+      width: auto;
+    }
+
+    .form--label p, .label--fa {
+      font-size: 15px;
+    }
+  }
+}

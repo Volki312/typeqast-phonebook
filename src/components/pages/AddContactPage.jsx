@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import CrudNavigation from '../navigations/CrudNavigation'
 import ContactForm from '../forms/ContactForm'
+import contactsStore from '../../fakeApi/store';
 
 class AddContactPage extends Component {
   constructor(props) {
@@ -14,7 +16,6 @@ class AddContactPage extends Component {
         image: ""
       }
     }
-
     this.handleInputChange = this.handleInputChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.togglePopup = this.togglePopup.bind(this)
@@ -22,58 +23,52 @@ class AddContactPage extends Component {
     this.removeNumber = this.removeNumber.bind(this)
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     const target = event.target
     const value = target.value
     const name = target.name
-    const className = target.className
+    const classList = target.classList[0]
     const i = target.dataset.id
 
-    if (["number", "label"].includes(className)) {
+    if (["number", "label"].includes(classList)) {
       const numbers = [...this.state.form.numbers]   
-      numbers[i][className] = value
+      numbers[i][classList] = value
       this.setState( {form: { ...this.state.form, numbers: numbers }})
     } 
     else this.setState( {form:{ ...this.state.form, [name]: value }})
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     event.preventDefault()
-
     event.target.form.checkValidity()
     event.target.form.reportValidity()
 
-    this.props.addContact(this.state.form)
-    this.props.history.push("/contacts/all")
+    const newContact = {...this.state.form, "isFavorite": false}
+    contactsStore.create(newContact).then(
+      data => this.props.history.push("/contacts/all")
+    )
   }
 
-  togglePopup = (event) => {
+  togglePopup = event => {
     event.preventDefault()
-    this.setState({
-      showPopup: !this.state.showPopup,
-    })
+    this.setState(prevState => ({showPopup: !prevState.showPopup}))
   }
 
-  addNumber = (event) => {
+  addNumber = event => {
     event.preventDefault()
-    this.setState(prevState => ({numbers: [...prevState.numbers, {number:"", label:""}]}))
+    this.setState(prevState => ({form : {...prevState.form, numbers: [...prevState.form.numbers, {number:"", label:""}] }}))
   }
 
-  removeNumber = (event) => {
+  removeNumber = event => {
     event.preventDefault()
-    const numbers = this.state.numbers
     const i = parseInt(event.target.previousElementSibling.dataset.id)
-
-    const updatedNumbers = [...numbers.slice(0, i), ...numbers.slice(i + 1)]
-
-    this.setState({numbers: updatedNumbers})
+    this.setState(prevState => ({form : {...prevState.form, numbers: prevState.form.numbers.filter((num, ind) => ind !== i)}}))
   }
 
   render() {
-    const { match } = this.props
     return (
       <div>
-        <CrudNavigation match={match} deleteContact={this.deleteContact} id={match.params.id} />
+        <CrudNavigation match={this.props.match} />
         <main>
           <ContactForm
             state={this.state}
@@ -87,6 +82,12 @@ class AddContactPage extends Component {
       </div>
     )
   }
+}
+
+AddContactPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 }
 
 export default AddContactPage

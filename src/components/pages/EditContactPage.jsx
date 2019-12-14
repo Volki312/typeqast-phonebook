@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import CrudNavigation from '../navigations/CrudNavigation'
 import ContactForm from '../forms/ContactForm'
 import contactsStore from '../../fakeApi/store';
@@ -17,66 +18,60 @@ class EditContactPage extends Component {
         isFavorite: false
       }
     }
-
-    this.deleteContact = this.deleteContact.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
     this.togglePopup = this.togglePopup.bind(this)
     this.addNumber = this.addNumber.bind(this)
     this.removeNumber = this.removeNumber.bind(this)
+    this.deleteContact = this.deleteContact.bind(this)
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     const target = event.target
     const value = target.value
     const name = target.name
-    const className = target.className
+    const classList = target.classList[0]
     const i = target.dataset.id
-    
-    console.log(this.state)
 
-    if (["number", "label"].includes(className)) {
+    if (["number", "label"].includes(classList)) {
       const numbers = [...this.state.form.numbers]   
-      numbers[i][className] = value
+      numbers[i][classList] = value
       this.setState( {form: { ...this.state.form, numbers: numbers }})
     } 
     else this.setState( {form:{ ...this.state.form, [name]: value }})
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     event.preventDefault()
 
     event.target.form.checkValidity()
     event.target.form.reportValidity()
 
-    this.props.editContact(this.state.form)
-    this.props.history.push("/contacts/all")
+    contactsStore.update(this.state.form).then(
+      data => this.props.history.push("/contacts/all")
+    )
   }
 
-  deleteContact = (id) => {
-    this.props.deleteContact(id)
-    this.props.history.push("/contacts/all")
+  deleteContact = id => {
+    contactsStore.remove(id).then(
+      data => this.props.history.push("/contacts/all")
+    )
   }
 
-  togglePopup = (event) => {
+  togglePopup = event => {
     event.preventDefault()
-    this.setState({
-      showPopup: !this.state.showPopup,
-    })
+    this.setState(prevState => ({showPopup: !prevState.showPopup}))
   }
 
-  addNumber = (event) => {
+  addNumber = event => {
     event.preventDefault()
-    const form = this.state.form
-
-    this.setState({form: { numbers: [...form.numbers, {number:"", label:""}]}})
+    this.setState(prevState => ({form : {...prevState.form, numbers: [...prevState.form.numbers, {number:"", label:""}] }}))
   }
 
-  removeNumber = (event) => {
+  removeNumber = event => {
     event.preventDefault()
-    const form = this.state.form
     const i = parseInt(event.target.previousElementSibling.dataset.id)
-
-    this.setState({form: { numbers: [...form.numbers.slice(0, i), ...form.numbers.slice(i + 1)]}})
+    this.setState(prevState => ({form : {...prevState.form, numbers: prevState.form.numbers.filter((num, ind) => ind !== i)}}))
   }
 
   componentDidMount() {
@@ -93,7 +88,7 @@ class EditContactPage extends Component {
     const { match } = this.props
     return (
       <div>
-        <CrudNavigation match={match} deleteContact={this.deleteContact} id={match.params.id} />
+        <CrudNavigation match={match} deleteContact={this.deleteContact} id={parseInt(match.params.id)} />
         <main>
           <ContactForm
             state={this.state}
@@ -107,6 +102,12 @@ class EditContactPage extends Component {
       </div>
     )
   }
+}
+
+EditContactPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 }
 
 export default EditContactPage

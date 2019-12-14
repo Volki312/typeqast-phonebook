@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import CrudNavigation from '../navigations/CrudNavigation'
+import contactsStore from '../../fakeApi/store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
-import contactsStore from '../../fakeApi/store';
 
 class ContactDetailsPage extends React.Component {
   constructor() {
@@ -29,23 +30,22 @@ class ContactDetailsPage extends React.Component {
   componentDidMount() {
     const id = parseInt(this.props.match.params.id)
     contactsStore.get(id).then(data => 
-      data ?
+      !!data ?
       this.setState({
         isLoading: false,
         contact: data
-      })
-      :
+      }) :
       this.props.history.push("/contacts/ContactNotFound")
     )
   }
 
   render () {
-    const contact = this.state.contact
+    const { contact } = this.state
 
     return (
       <div>
+        <CrudNavigation match={this.props.match} isFavorite={contact.isFavorite} id={contact.id} />
 
-        <CrudNavigation match={this.props.match} isFavorite={contact.isFavorite} id={contact.id}/>
         <main className="contact--details">
           <div className="details--row details--row-title">
             <img src={contact.image || "https://i.ibb.co/80WvdvX/placeholder.png"} alt="profile" className="details--image" />
@@ -53,7 +53,8 @@ class ContactDetailsPage extends React.Component {
           </div>
 
           <div className="details--body">
-            <div className="details--row">
+            { !!contact.email &&
+              <div className="details--row">
               <div className="details--column">
                 <FontAwesomeIcon icon={faEnvelope} className="details--group-title" />
               </div>
@@ -62,8 +63,11 @@ class ContactDetailsPage extends React.Component {
                 <p className="details--email">{contact.email}</p>
               </div>
             </div>
+            }
           
-            <div className="details--row">
+            {
+              (!!contact.numbers && contact.numbers.length > 0) &&
+              <div className="details--row">
               <div className="details--column">
                 <FontAwesomeIcon icon={faMobileAlt} className="details--group-title" />
               </div>
@@ -83,11 +87,18 @@ class ContactDetailsPage extends React.Component {
                 </div>
               </div>
             </div>
+            }
           </div>
         </main>
       </div>
     )
   }
+}
+
+ContactDetailsPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 }
 
 export default ContactDetailsPage

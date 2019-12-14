@@ -1,3 +1,5 @@
+@import "navigations/crudNavigation";
+
 .contact--details {
   width: 0.9 * 96%;
   margin: 0 auto;
@@ -50,5 +52,13 @@
 
   .details--number-label {
     width: 78px;
+  }
+}
+
+@include tablet {
+  .contact--details {
+    .details--body {
+      width: 50%;
+    }
   }
 }

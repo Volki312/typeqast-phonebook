@@ -1,23 +1,8 @@
 import mockContacts from './db'
 import LocalStorage from './localStorage'
 
-// Credits to @frezo00
-// https://github.com/frezo00/juniorJS-typeqast
+// Thumbs up for @frezo00
 
-/**
- * Service simulation with fake http calls.
- *
- * NOTE:
- *
- * Due to specific nature of Local Storage, for every request we need
- * to provide new array which will be saved in the local storage.
- * Based on that, local '_contacts' array is required for CRUD operations
- * on that array.
- *
- * This is mentioned since that kind of array isn't usually necessary
- * in service-like functions, as long as we can retrieve that kind of
- * data directly from app store/storage.
- */
 const Service = () => {
   let _contacts = []
   const _localStorage = LocalStorage()
@@ -31,7 +16,7 @@ const Service = () => {
       setTimeout(() => {
         _localStorage.save(contacts)
         resolve(contacts)
-      }, 100)
+      }, 200)
     })
   }
 

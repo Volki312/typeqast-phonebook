@@ -17,3 +17,18 @@
     box-shadow: 0px 0px 20px $secondary-color-light;
   }
 }
+
+@include desktop {
+  .nav--filter {
+    width: 40%;
+    margin: 4vh 0;
+    
+    .filter--icon {
+      top: 36px;
+    }
+
+    .filter--input {
+      padding: 1.5em 15%;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+#contacts_add {
+  height: 14.5vw;
+  border: 1px dashed $primary-color-light;
+
+  svg, a {
+    color: $primary-color-light;
+    margin: 0 3%;
+  }
+
+  svg {
+    display: inline-block;
+  }
+
+  a {
+    width: 100%;
+  }
+}
+
+@include desktop {
+  #contacts_add {
+    justify-content: center;
+
+    a {
+      text-align: center;
+    }
+  }
+}

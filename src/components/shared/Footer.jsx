@@ -1,12 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Footer = (props) => {
+const Footer = props => {
   return (
-    !props.isFiltered &&
     <footer>
-      <p className="contacts--info">{props.numberOfContacts} contacts total in total</p>
+      <p className="contacts--info">{props.contactsLength} contacts total in total</p>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  contactsLength: PropTypes.number.isRequired
 }
 
 export default Footer
