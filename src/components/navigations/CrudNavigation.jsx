@@ -10,7 +10,7 @@ const CrudNavigation = (props) => {
   const path = props.match.path
 
   return (
-    <nav id="nav-crud">
+    <nav id="nav_crud">
       <GoBackButton />
         {
         path === "/contacts/details/:id" && 

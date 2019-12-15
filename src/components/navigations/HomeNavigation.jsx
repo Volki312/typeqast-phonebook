@@ -8,7 +8,7 @@ const HomeNavigation = (props) => {
   const handleInputChange = updatedFilter => props.handleInputChange(updatedFilter)
 
   return (
-      <nav id="nav-home">
+      <nav id="nav_home">
         <div className="nav--links">
           <NavLink exact to={"/contacts/all"} className="nav--link" activeClassName="nav--link-active">All contacts</NavLink>
           <NavLink exact to={"/contacts/favorites"} className="nav--link nav--link-last" activeClassName="nav--link-active">My favorites</NavLink>

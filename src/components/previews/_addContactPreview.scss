@@ -2,16 +2,16 @@
   height: 14.5vw;
   border: 1px dashed $primary-color-light;
 
-  svg, a {
+  .contacts_add--fa, .contacts_add--link {
     color: $primary-color-light;
     margin: 0 3%;
   }
 
-  svg {
+  .contacts_add--fa {
     display: inline-block;
   }
 
-  a {
+  .contacts_add--link {
     width: 100%;
   }
 }
@@ -20,7 +20,7 @@
   #contacts_add {
     justify-content: center;
 
-    a {
+    .contacts_add {
       text-align: center;
     }
   }

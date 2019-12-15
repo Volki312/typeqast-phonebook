@@ -20,7 +20,7 @@ const ImageUrlPopupInput = props => {
         props.showPopup &&
         <div className="form--popup">
           <div className="popup--inner">
-            <label className="form--label">
+            <label className="form--label popup--label">
             <FontAwesomeIcon icon={faLink} className="label--fa" />
             <p>image url</p><br/>
             <input
@@ -29,10 +29,10 @@ const ImageUrlPopupInput = props => {
               type="url"
               value={props.value}
               onChange={handleInputChange}
-              className="form--input"
+              className="form--input popup--input"
             />
             </label>
-            <button onClick={handleButtonClick}>finish</button>
+            <button onClick={handleButtonClick} className="popup--button">finish</button>
           </div>
         </div>
       }
