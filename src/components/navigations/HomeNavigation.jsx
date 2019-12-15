@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import FilterContactsInput from '../inputs/FilterContactsInput'
 import { NavLink } from 'react-router-dom'
 
-const HomeNavigation = (props) => {
-  const filter = props.filter
+const HomeNavigation = props => {
+  const { filter } = props
   const handleInputChange = updatedFilter => props.handleInputChange(updatedFilter)
 
   return (

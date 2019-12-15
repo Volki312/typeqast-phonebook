@@ -14,10 +14,6 @@ const FavoritiseContactButton = props => {
   )
 }
 
-FavoritiseContactButton.defaultProps = {
-  className: "nav--button"
-}
-
 FavoritiseContactButton.propTypes = {
   className: PropTypes.string,
   isFavorite: PropTypes.bool.isRequired,

@@ -16,10 +16,6 @@ class DeleteContactButton extends React.Component {
   togglePopup = () => this.setState(prevState => ({showPopup: !prevState.showPopup}))
   deleteContact = () => this.props.deleteContact()
   
-  static defaultProps = {
-    className: "nav--button"
-  }
-
   render () {
     return (
       <div>

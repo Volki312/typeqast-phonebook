@@ -14,10 +14,6 @@ const GoBackButton = props => {
   )
 }
 
-GoBackButton.defaultProps = {
-  className: "nav--button"
-}
-
 GoBackButton.propTypes = {
   className: PropTypes.string
 }

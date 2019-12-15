@@ -10,53 +10,19 @@ class EditContactPage extends React.Component {
     super()
     this.state = {
       isLoading: true,
-      showPopup: false,
-      form: {
-        id: 0,
-        name: "",
-        email: "",
-        numbers: [{number: "", label: ""}],
-        image: "",
-        isFavorite: false
-      }
+      contact: {}
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.togglePopup = this.togglePopup.bind(this)
-    this.addNumber = this.addNumber.bind(this)
-    this.removeNumber = this.removeNumber.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
   }
 
-  handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    const classList = target.classList[0]
-    const i = target.dataset.id
-    const { form } = this.state
+  handleSubmit = contact => {
+    const { isFavorite, id } = this.state.contact
+    const updatedContact = {...contact, isFavorite: isFavorite, id: id}
 
-    if (["number", "label"].includes(classList)) {
-      const numbers = [...form.numbers]   
-      numbers[i][classList] = value
-      this.setState( {form: { ...form, numbers: numbers }})
-    } 
-    else this.setState( {form:{ ...form, [name]: value }})
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-    const { name, numbers } = this.state.form
-
-    if (name.length < 4) alert("\t\t\t\t⊂(▀¯▀⊂)\n\t\t\t\tHold up!\nName must contain more than 3 characters!")
-    else if (name.length > 40) alert("\tლ( ◕ 益 ◕ ) ლ\nY so meny characters")
-    //TODO: email, image url, number regex test
-    else if (numbers.length === 0 || !numbers[0].number || numbers[0].number.length === 0) alert("\t\t\t(⌐■_■)–︻╦╤─\nEnter at least one contact number or I shot!")
-    else {
-      contactsStore.update(this.state.form).then(
-        data => this.props.history.push("/contacts/all")
-      )
-    }
+    contactsStore.update(updatedContact).then(
+      data => this.props.history.push("/contacts/all")
+    )
   }
 
   deleteContact = id => {
@@ -65,28 +31,12 @@ class EditContactPage extends React.Component {
     )
   }
 
-  togglePopup = event => {
-    event.preventDefault()
-    this.setState(prevState => ({showPopup: !prevState.showPopup}))
-  }
-
-  addNumber = event => {
-    event.preventDefault()
-    this.setState(prevState => ({form : {...prevState.form, numbers: [...prevState.form.numbers, {number:"", label:""}] }}))
-  }
-
-  removeNumber = event => {
-    event.preventDefault()
-    const i = parseInt(event.target.previousElementSibling.dataset.id)
-    this.setState(prevState => ({form : {...prevState.form, numbers: prevState.form.numbers.filter((num, ind) => ind !== i)}}))
-  }
-
   componentDidMount() {
     const id = parseInt(this.props.match.params.id)
     contactsStore.get(id).then(data => 
       data ?
       this.setState({
-        form: {...data}, 
+        contact: {...data}, 
         isLoading: false
       }) :
       this.props.history.push("/contacts/ContactNotFound")
@@ -95,7 +45,7 @@ class EditContactPage extends React.Component {
 
   render() {
     const { match } = this.props
-    const { isLoading } = this.state
+    const { isLoading, contact } = this.state
     
     return (
       <div>
@@ -104,14 +54,7 @@ class EditContactPage extends React.Component {
           {
           isLoading ?
           <LoadingSpinner /> :
-          <ContactForm
-            state={this.state}
-            handleInputChange={this.handleInputChange}
-            handleSubmit={this.handleSubmit}
-            togglePopup={this.togglePopup}
-            addNumber={this.addNumber}
-            removeNumber={this.removeNumber}
-          />
+          <ContactForm contact={contact} handleSubmit={this.handleSubmit} />
           }
         </main>
       </div>

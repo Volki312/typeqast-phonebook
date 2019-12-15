@@ -36,7 +36,7 @@ const ContactsStore = (dataService) => {
    */
   const create = data => {
     dataService.getAll().then(data => _contacts = data)
-    const newContact = { id: getUniqueId(_contacts), ...data }
+    const newContact = { id: getUniqueId(_contacts), isFavorite: false, ...data }
     return dataService.create(newContact)
   }
 

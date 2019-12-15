@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
-const NumberInputs = (props) => {
+const NumberInputs = props => {
   const handleInputChange = event => props.handleInputChange(event)
   const removeNumber = event => props.removeNumber(event)
   const addNumber = event => props.addNumber(event)

@@ -14,10 +14,6 @@ const EditContactButton = props => {
   )
 }
 
-EditContactButton.defaultProps = {
-  className: "nav--button"
-}
-
 EditContactButton.propTypes = {
   className: PropTypes.string,
   id: PropTypes.number.isRequired

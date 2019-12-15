@@ -12,19 +12,7 @@ class ContactDetailsPage extends React.Component {
     super()
     this.state = {
       isLoading: true,
-      contact: {
-        "id": 0,
-        "name": "name",
-        "email": "email",
-        "numbers": [
-          {
-            "number": "number",
-            "label": "label"
-          }
-        ],
-        "isFavorite": true,
-        "image": "#"
-      }
+      contact: {}
     }
   }
 
