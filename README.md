@@ -19,5 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Preview
 
-![Preview_image](https://i.ibb.co/nCWT0cc/Preview.png)
-![Preview_image](https://i.ibb.co/X3qKkbs/Preview1.png)
+Simplified project structure:
+
+**/contacts/all and /contacts/favorites**
+
+![HomePage_preview](https://i.ibb.co/NNdvm3n/HomePage.png)
+
+**/contacts/edit/:id and /contacts/add**
+
+![AddOrEditPage_preview](https://i.ibb.co/Jkc14y5/Add-Or-Edit-Contact-Page.png)
