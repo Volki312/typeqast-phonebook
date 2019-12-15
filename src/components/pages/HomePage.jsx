@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import HomeNavigation from '../navigations/HomeNavigation'
 import ContactList from '../previews/ContactList'
 import Footer from '../shared/Footer'
+import LoadingSpinner from '../shared/LoadingSpinner'
 import contactsStore from '../../fakeApi/store';
 
 class HomePage extends React.Component {
@@ -54,12 +55,15 @@ class HomePage extends React.Component {
 
   render () {
     const isPathAll = this.props.match.url === "/contacts/all"
-    const { contacts, filter } = this.state
+    const { contacts, filter, isLoading } = this.state
     const filteredContacts = contacts.filter(con => con.isFavorite)
     
     return (
       <div>
         <HomeNavigation handleInputChange={this.handleInputChange} filter={filter} />
+        {
+        isLoading ?
+        <LoadingSpinner /> :
         <ContactList
           contacts={isPathAll ? contacts : filteredContacts}
           filter={filter}
@@ -67,7 +71,9 @@ class HomePage extends React.Component {
           toggleFavorite={this.toggleFavorite} 
           isPathAll={isPathAll}
         />
-        {!filter && <Footer contactsLength={isPathAll ? contacts.length : filteredContacts.length} />}
+
+        }
+        {(!isLoading && !filter) && <Footer contactsLength={isPathAll ? contacts.length : filteredContacts.length} />}
       </div>
     )
   }

@@ -16,7 +16,7 @@ const Service = () => {
       setTimeout(() => {
         _localStorage.save(contacts)
         resolve(contacts)
-      }, 200)
+      }, 600)
     })
   }
 
@@ -38,7 +38,7 @@ const Service = () => {
     _contacts = _localStorage.get()
     const contact = _contacts.find(c => c.id === id)
     return new Promise(resolve => {
-      setTimeout(() => resolve(contact), 100)
+      setTimeout(() => resolve(contact), 200)
     })
   }
 

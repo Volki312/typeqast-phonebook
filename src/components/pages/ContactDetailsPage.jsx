@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CrudNavigation from '../navigations/CrudNavigation'
+import LoadingSpinner from '../shared/LoadingSpinner'
 import contactsStore from '../../fakeApi/store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
@@ -40,12 +41,14 @@ class ContactDetailsPage extends React.Component {
   }
 
   render () {
-    const { contact } = this.state
+    const { contact, isLoading } = this.state
 
     return (
       <div>
         <CrudNavigation match={this.props.match} isFavorite={contact.isFavorite} id={contact.id} />
-
+        {
+        isLoading ?
+        <LoadingSpinner /> :
         <main className="contact--details">
           <div className="details--row details--row-title">
             <img src={contact.image || "https://i.ibb.co/80WvdvX/placeholder.png"} alt="profile" className="details--image" />
@@ -90,6 +93,7 @@ class ContactDetailsPage extends React.Component {
             }
           </div>
         </main>
+        }
       </div>
     )
   }

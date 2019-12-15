@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import CrudNavigation from '../navigations/CrudNavigation'
 import ContactForm from '../forms/ContactForm'
+import LoadingSpinner from '../shared/LoadingSpinner'
 import contactsStore from '../../fakeApi/store';
 
 class EditContactPage extends Component {
   constructor() {
     super()
     this.state = {
+      isLoading: true,
       showPopup: false,
       form: {
         id: 0,
@@ -32,13 +34,14 @@ class EditContactPage extends Component {
     const name = target.name
     const classList = target.classList[0]
     const i = target.dataset.id
+    const { form } = this.state
 
     if (["number", "label"].includes(classList)) {
-      const numbers = [...this.state.form.numbers]   
+      const numbers = [...form.numbers]   
       numbers[i][classList] = value
-      this.setState( {form: { ...this.state.form, numbers: numbers }})
+      this.setState( {form: { ...form, numbers: numbers }})
     } 
-    else this.setState( {form:{ ...this.state.form, [name]: value }})
+    else this.setState( {form:{ ...form, [name]: value }})
   }
 
   onSubmit = event => {
@@ -78,18 +81,25 @@ class EditContactPage extends Component {
     const id = parseInt(this.props.match.params.id)
     contactsStore.get(id).then(data => 
       data ?
-      this.setState({form: {...data}})
-      :
+      this.setState({
+        form: {...data}, 
+        isLoading: false
+      }) :
       this.props.history.push("/contacts/ContactNotFound")
     )
   }
 
   render() {
     const { match } = this.props
+    const { isLoading } = this.state
+    
     return (
       <div>
         <CrudNavigation match={match} deleteContact={this.deleteContact} id={parseInt(match.params.id)} />
         <main>
+          {
+          isLoading ?
+          <LoadingSpinner /> :
           <ContactForm
             state={this.state}
             handleInputChange={this.handleInputChange}
@@ -98,6 +108,7 @@ class EditContactPage extends Component {
             addNumber={this.addNumber}
             removeNumber={this.removeNumber}
           />
+          }
         </main>
       </div>
     )
