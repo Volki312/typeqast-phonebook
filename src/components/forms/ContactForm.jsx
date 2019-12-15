@@ -9,7 +9,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 const ContactForm = props => {
   const handleInputChange = event => props.handleInputChange(event)
-  const onSubmit = event => props.onSubmit(event)
+  const handleSubmit = event => props.handleSubmit(event)
   const togglePopup = event => props.togglePopup(event)
   const addNumber = event => props.addNumber(event)
   const removeNumber = event => props.removeNumber(event)
@@ -77,7 +77,7 @@ const ContactForm = props => {
         <button className="form--button form--button-cancel">
           <Link to="/contacts/all">Cancel</Link>
         </button>
-        <button onClick={onSubmit} className="form--button form--button-save">Save</button>
+        <button onClick={handleSubmit} className="form--button form--button-save">Save</button>
       </div>
     </form>
   )
@@ -86,7 +86,7 @@ const ContactForm = props => {
 ContactForm.propTypes = {
   state: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.bool])).isRequired,
   handleInputChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   togglePopup: PropTypes.func.isRequired,
   addNumber: PropTypes.func.isRequired,
   removeNumber: PropTypes.func.isRequired

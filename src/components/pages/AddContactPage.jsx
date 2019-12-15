@@ -17,7 +17,7 @@ class AddContactPage extends Component {
       }
     }
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.togglePopup = this.togglePopup.bind(this)
     this.addNumber = this.addNumber.bind(this)
     this.removeNumber = this.removeNumber.bind(this)
@@ -38,7 +38,7 @@ class AddContactPage extends Component {
     else this.setState( {form:{ ...this.state.form, [name]: value }})
   }
 
-  onSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault()
     event.target.form.checkValidity()
     event.target.form.reportValidity()
@@ -73,7 +73,7 @@ class AddContactPage extends Component {
           <ContactForm
             state={this.state}
             handleInputChange={this.handleInputChange}
-            onSubmit={this.onSubmit}
+            handleSubmit={this.handleSubmit}
             togglePopup={this.togglePopup}
             addNumber={this.addNumber}
             removeNumber={this.removeNumber}

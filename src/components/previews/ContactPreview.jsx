@@ -6,18 +6,18 @@ import DeleteContactButton from '../buttons/DeleteContactButton'
 import EditContactButton from '../buttons/EditContactButton'
 
 const ContactPreview = props => {
-  const toggleFavorite = id => props.toggleFavorite(id)
-  const deleteContact = id => props.deleteContact(id)
   const { image, id, name, isFavorite } = props
+  const toggleFavorite = () => props.toggleFavorite(id)
+  const deleteContact = () => props.deleteContact(id)
   
   return (
     <div className="contact">
         <img className="contact--image" src={image || "https://i.ibb.co/80WvdvX/placeholder.png"} alt="Contact_Image" />
         <Link className="contact--name" to={`/contacts/details/${id}`}>{name}</Link>
         <div className="contact--actions">
-          <FavoritiseContactButton id={id} isFavorite={isFavorite} toggleFavorite={toggleFavorite} className="contact--button" />
+          <FavoritiseContactButton isFavorite={isFavorite} toggleFavorite={toggleFavorite} className="contact--button" />
           <EditContactButton id={id} className="contact--button" />
-          <DeleteContactButton id={id} deleteContact={deleteContact} className="contact--button" />
+          <DeleteContactButton deleteContact={deleteContact} className="contact--button" />
         </div>
     </div>
   )

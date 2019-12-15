@@ -1,0 +1,40 @@
+#delete_confirmation {
+  @extend %popup;
+  
+  .confirmation--inner {
+    @extend %popup-inner;
+    display: flex;
+    flex-direction: column;
+
+    .confirmation--title {
+      border-bottom: 2px solid $secondary-color-light;
+      padding-bottom: 10px;
+      margin-bottom: 7%;
+    }
+
+    .confirmation--body {
+      text-align: center;
+      margin: 20px 25px 7% 25px !important;
+    }
+
+    .confirmation--actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 4%;
+
+      .confirmation--button-cancel {
+        @include oval-button(20vw, $secondary-color-dark);
+    
+        a {
+          color: white;
+        }
+      }
+      
+      .confirmation--button-delete {
+        @include oval-button(20vw, $primary-color-dark);
+      }
+    }
+  }
+
+}

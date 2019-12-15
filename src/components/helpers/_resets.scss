@@ -38,7 +38,11 @@ svg {
 }
 
 @include tablet {
-  p {
+  body {
     font-size: 15px;
+  }
+
+  .svg-inline--fa {
+    font-size: 1.1em;
   }
 }

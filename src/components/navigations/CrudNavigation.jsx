@@ -6,20 +6,20 @@ import DeleteContactButton from '../buttons/DeleteContactButton'
 import GoBackButton from '../buttons/GoBackButton'
 
 const CrudNavigation = (props) => {
-  const deleteContact = id => props.deleteContact(id)
-  const path = props.match.path
+  const { match, id, isFavorite } = props
+  const deleteContact = () => props.deleteContact(id)
 
   return (
     <nav id="nav_crud">
       <GoBackButton />
         {
-        path === "/contacts/details/:id" && 
+        match.path === "/contacts/details/:id" && 
         <div>
-          <FavoritiseContactButton isFavorite={props.isFavorite} />
-          <EditContactButton id={props.id} />
+          <FavoritiseContactButton isFavorite={isFavorite} />
+          <EditContactButton id={id} />
         </div>
         }
-      { path === "/contacts/edit/:id" && <DeleteContactButton id={props.id} deleteContact={deleteContact} /> }
+      { match.path === "/contacts/edit/:id" && <DeleteContactButton deleteContact={deleteContact} /> }
     </nav>
   )
 }

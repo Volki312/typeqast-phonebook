@@ -20,5 +20,9 @@
   #contacts_add {
     justify-content: center;
     text-align: center;
+
+    .contacts_add--link {
+      font-size: initial;
+    }
   }
 }

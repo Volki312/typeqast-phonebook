@@ -44,6 +44,8 @@
     @extend %rounded-border;
     width: 17vw;
     height: 17vw;
+    max-width: 180px;
+    max-height: 180px;
   }
 
   .details--email {

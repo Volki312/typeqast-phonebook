@@ -5,10 +5,10 @@ import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 
 const FavoritiseContactButton = props => {
-  const handleClick = event => !!props.toggleFavorite && props.toggleFavorite(props.id)
+  const toggleFavorite = event => !!props.toggleFavorite && props.toggleFavorite(props.id)
 
   return (
-    <button className={props.className} onClick={handleClick} style={{cursor: !props.toggleFavorite && "default"}}>
+    <button className={props.className} onClick={toggleFavorite} style={{cursor: !props.toggleFavorite && "default"}}>
       { props.isFavorite ? <FontAwesomeIcon icon={faHeartSolid} /> : <FontAwesomeIcon icon={faHeartRegular} /> }
     </button>
   )
