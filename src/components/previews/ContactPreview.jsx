@@ -12,7 +12,7 @@ const ContactPreview = props => {
   
   return (
     <div className="contact">
-        <img className="contact--image" src={image || "https://i.ibb.co/80WvdvX/placeholder.png"} alt="Contact_Image" />
+        <img className="contact--image" src={image} alt="Contact_Image" />
         <Link className="contact--name" to={`/contacts/details/${id}`}>{name}</Link>
         <div className="contact--actions">
           <FavoritiseContactButton isFavorite={isFavorite} toggleFavorite={toggleFavorite} className="contact--button" />
@@ -21,6 +21,10 @@ const ContactPreview = props => {
         </div>
     </div>
   )
+}
+
+ContactPreview.defaultProps = {
+  image: "https://i.ibb.co/80WvdvX/placeholder.png"
 }
 
 ContactPreview.propTypes = {

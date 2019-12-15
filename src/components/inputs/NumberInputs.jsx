@@ -27,8 +27,6 @@ const NumberInputs = (props) => {
                 value={number.number} 
                 className="number form--input"
                 onChange={handleInputChange}
-                maxLength="20"
-                required
               />
               <br/>
               <input
@@ -40,8 +38,6 @@ const NumberInputs = (props) => {
                 value={number.label} 
                 className="label form--input form--input-shorter"
                 onChange={handleInputChange}
-                maxLength="20"
-                required
               />
               <button onClick={removeNumber} className="form--button form--button-remove">X</button>
             </div>

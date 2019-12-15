@@ -11,7 +11,7 @@ const ImageUrlPopupInput = props => {
     <div style={{display: "flex"}}>
       <button 
         onClick={handleButtonClick} 
-        style={{backgroundImage: `url(${props.value || "https://i.ibb.co/80WvdvX/placeholder.png"})`, backgroundSize: "cover"}} 
+        style={{backgroundImage: `url(${props.value})`, backgroundSize: "cover"}} 
         className="form--image"
       >
         <FontAwesomeIcon icon={faUpload} />
@@ -38,6 +38,10 @@ const ImageUrlPopupInput = props => {
       }
     </div>
   )
+}
+
+ImageUrlPopupInput.defaultProps = {
+  value: "https://i.ibb.co/80WvdvX/placeholder.png"
 }
 
 ImageUrlPopupInput.propTypes = {

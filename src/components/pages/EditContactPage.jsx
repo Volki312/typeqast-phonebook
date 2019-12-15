@@ -46,13 +46,17 @@ class EditContactPage extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    const { name, numbers } = this.state.form
 
-    event.target.form.checkValidity()
-    event.target.form.reportValidity()
-
-    contactsStore.update(this.state.form).then(
-      data => this.props.history.push("/contacts/all")
-    )
+    if (name.length < 4) alert("\t\t\t\t⊂(▀¯▀⊂)\n\t\t\t\tHold up!\nName must contain more than 3 characters!")
+    else if (name.length > 40) alert("\tლ( ◕ 益 ◕ ) ლ\nY so meny characters")
+    //TODO: email, image url, number regex test
+    else if (numbers.length === 0 || !numbers[0].number || numbers[0].number.length === 0) alert("\t\t\t(⌐■_■)–︻╦╤─\nEnter at least one contact number or I shot!")
+    else {
+      contactsStore.update(this.state.form).then(
+        data => this.props.history.push("/contacts/all")
+      )
+    }
   }
 
   deleteContact = id => {

@@ -9,7 +9,15 @@ const FilterContactsInput = props => {
   return (
     <div className="nav--filter">
       <FontAwesomeIcon icon={faSearch} className="filter--icon" />
-      <label><input type="text" name="filter" onChange={handleInputChange} value={props.value} className="filter--input" /></label>
+      <label>
+        <input 
+          type="text" 
+          name="filter" 
+          onChange={handleInputChange} 
+          value={props.value} 
+          className="filter--input" 
+        />
+      </label>
     </div>
   )
 }

@@ -17,8 +17,6 @@ const ContactForm = props => {
   const { showPopup, form } = props.state
   const { image, name, email, numbers } = form
 
-  //TODO: form validation rules
-
   return (
     <form id="form">
       <div className="form--row">
@@ -40,10 +38,8 @@ const ContactForm = props => {
             type="text"
             value={name}
             onChange={handleInputChange}
-            maxLength="28"
             className="form--input"
             autoFocus
-            required
           />
         </label>
       </div>
@@ -58,7 +54,6 @@ const ContactForm = props => {
             type="email"
             value={email}
             onChange={handleInputChange}
-            maxLength="40"
             className="form--input"
           />
         </label>
