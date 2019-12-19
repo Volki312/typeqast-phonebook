@@ -18,7 +18,10 @@ class ImageUrlPopupInput extends React.Component {
   }
   
   handleInputChange = event => this.handleInputChange(event)
-  togglePopup = event => this.setState(prevState => ({showPopup: !prevState.showPopup}))
+  togglePopup = event => {
+    event.preventDefault()
+    this.setState(prevState => ({showPopup: !prevState.showPopup}))
+  }
 
   render() {
     return (
