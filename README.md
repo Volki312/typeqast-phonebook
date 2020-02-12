@@ -1,6 +1,7 @@
 # Welcome to React Phonebook project :wave:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is deployed with Heroku [here](https://typeqast-phonebook.herokuapp.com). It's written in "vanilla" React, HTML and SCSS. localStorage was used as a mock API, SCSS is mediocre.
 
 ## Available Scripts
 
